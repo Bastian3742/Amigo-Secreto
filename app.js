@@ -20,4 +20,28 @@ function agregarAmigo() {
 
     // 4. Limpiar el campo de entrada
     input.value = "";
+     
+    //5. Llamamos a la función que muestra los amigos en pantalla
+     mostrarAmigos();
+}
+
+//6. Función para mostrar la lista de amigos en el HTML
+function mostrarAmigos(){
+     //Obtener el elemento UL donde se hará la lista de amigos
+     let lista = document.getElementById("listaAmigos");
+
+     //Limpiar la lista antes de volver a generarla
+     lista.innerHTML ="";
+
+     //Recorrer el array "amigos"
+     for (let i = 0; i <amigos.length; i++) {
+          //Crear un nuevo <li>
+          let item = document.createElement("li");
+
+          //Asignar el texto del amigo
+          item.textContent =amigos[i];
+
+          //Agregar el <li> a la lista
+          lista.appendChild(item);
+     }
 }
