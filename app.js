@@ -45,3 +45,22 @@ function mostrarAmigos(){
           lista.appendChild(item);
      }
 }
+// 7. Función para sortear un amigo secreto
+function sortearAmigo() {
+    let resultado = document.getElementById("resultado");
+
+    // Validar que el array no esté vacío
+    if (amigos.length === 0) {
+        resultado.innerHTML = "No hay amigos disponibles para sortear.";
+        return;
+    }
+
+    // Generar formula aleatoria
+    let amigoAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obtener el nombre del amigo sorteado
+    let amigoSorteado = amigos[amigoAleatorio];
+
+    // Mostrar el resultado en el HTML
+    resultado.innerHTML = "El amigo secreto es: <strong>" + amigoSorteado + "</strong>";
+}
